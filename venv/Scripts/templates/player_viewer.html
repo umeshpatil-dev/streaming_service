@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="http://cdn.dashjs.org/latest/dash.all.min.js">
+
+</script>
+<body>
+
+<div ng-app="" ng-init="firstName='John';lastName='Doe'">
+
+<p>The full name is: <span ng-bind="firstName + ' ' + lastName"></span></p>
+
+</div>
+<script>
+    function init() {
+        var video,
+            player,
+            url = "http://127.0.0.1/media/video.mpd";
+
+        video = document.querySelector("video");
+        player = dashjs.MediaPlayer().create();
+        player.initialize(video, url, false);
+    }
+</script>
+<div>
+    <video controls="true">
+    </video>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        init();
+    });
+</script>
+</body>
+</html>
